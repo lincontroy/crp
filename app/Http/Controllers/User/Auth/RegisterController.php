@@ -35,9 +35,9 @@ class RegisterController extends Controller
     {
         $this->basic_settings = BasicSettingsProvider::get();
 
-        $this->middleware(function() {
-            if($this->basic_settings->user_registration == false) return redirect()->route('frontend.index');
-        });
+        // $this->middleware(function() {
+        //     if($this->basic_settings->user_registration == false) return redirect()->route('frontend.index');
+        // });
     }
 
     /**
@@ -46,6 +46,8 @@ class RegisterController extends Controller
      * @return \Illuminate\View\View
      */
     public function showRegistrationForm($refer = null) {
+
+       
 
         if($refer && !User::where('referral_id',$refer)->exists()) {
             $refer = "";
@@ -70,6 +72,8 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
+
+        // dd($request);
         $validated = $this->validator($request->all())->validate();
 
         $basic_settings             = $this->basic_settings;
@@ -82,8 +86,13 @@ class RegisterController extends Controller
         // $validated['referral_id']       = generate_unique_reference_number();
         $validated['referral_id']       = generate_unique_string('users','referral_id',8,'number');
 
-        event(new Registered($user = $this->create($validated)));
-        $this->guard()->login($user);
+        $user = $this->create($validated);
+
+        
+        // event(new Registered($user = $this->create($validated)));
+        // $this->guard()->login($user);
+
+        
 
         return $this->registered($request, $user);
     }
@@ -134,6 +143,8 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
+
+        // dd($user,$request);
         try{
             $this->createUserWallets($user);
             $this->createAsReferUserIfExists($request, $user);
@@ -143,7 +154,7 @@ class RegisterController extends Controller
         }catch(Exception $e) {
             $this->guard()->logout();
             $user->delete();
-            return redirect()->back()->with(['error' => ['Something went wrong! Please try again']]);
+            return redirect()->back()->with(['error' => [$e->getMessage()]]);
         }
         return redirect()->intended(route('user.dashboard'));
     }
