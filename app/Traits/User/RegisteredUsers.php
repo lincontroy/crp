@@ -24,6 +24,8 @@ trait RegisteredUsers {
 
         $currencies = Currency::active()->roleHasOne()->pluck("id")->toArray();
         $wallets = [];
+
+        // dd($currencies);
         
         foreach($currencies as $currency_id) {
             $wallets[] = [

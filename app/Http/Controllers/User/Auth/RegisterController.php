@@ -88,10 +88,12 @@ class RegisterController extends Controller
 
         $user = $this->create($validated);
 
+
+
         
         // event(new Registered($user = $this->create($validated)));
-        // $this->guard()->login($user);
-
+        $this->guard()->login($user);
+        // dd($user,$request->all());
         
 
         return $this->registered($request, $user);
@@ -144,13 +146,13 @@ class RegisterController extends Controller
     protected function registered(Request $request, $user)
     {
 
-        // dd($user,$request);
+        // dd($user,$request->all());
         try{
-            $this->createUserWallets($user);
-            $this->createAsReferUserIfExists($request, $user);
-            $this->createNewUserRegisterBonus($user);
-            // assign new user to default level
-            $this->assignReferralLevelToNewUser($user);
+            // $this->createUserWallets($user);
+            // $this->createAsReferUserIfExists($request, $user);
+            // $this->createNewUserRegisterBonus($user);
+            // // assign new user to default level
+            // $this->assignReferralLevelToNewUser($user);
         }catch(Exception $e) {
             $this->guard()->logout();
             $user->delete();
