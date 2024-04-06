@@ -14,7 +14,7 @@
             <div class="form-group">
                 <input type="text" class="@error('email') is-invalid @enderror" title="Enter Username" required name="email" 
                     @env('local')
-                        value="superadmin@appdevs.net"
+                        value=""
                     @else
                         value="{{ old('email') }}" autofocus
                     @endenv
@@ -28,7 +28,7 @@
             <div class="form-group show_hide_password">
                 <input type="password" title="Enter password" required name="password"
                     @env('local')
-                        value="appdevs"
+                        value=""
                     @endenv
                 >
                 <button type="button" class="show-pass"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
