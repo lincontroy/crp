@@ -36,10 +36,10 @@
                 </div>
                 <div class="footer-download d-flex justify-content-center">
                     <div class="footer-download-btn">
-                        <a href="{{ $__app_settings->android_url ?? "javascript:void(0)" }}" target="_blank"><img src="{{ asset('public/frontend/images/app/play_store.png') }}" alt="app"></a>
+                        <a href="{{ $__app_settings->android_url ?? "javascript:void(0)" }}" target="_blank"><img src="{{ asset('/frontend/images/app/play_store.png') }}" alt="app"></a>
                     </div>
                     <div class="footer-download-btn ms-4">
-                        <a href="{{ $__app_settings->iso_url ?? "javascript:void(0)" }}" target="_blank"><img src="{{ asset('public/frontend/images/app/app_store.png') }}" alt="app"></a>
+                        <a href="{{ $__app_settings->iso_url ?? "javascript:void(0)" }}" target="_blank"><img src="{{ asset('/frontend/images/app/app_store.png') }}" alt="app"></a>
                     </div>
                 </div>
             </div>

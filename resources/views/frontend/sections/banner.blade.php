@@ -3,7 +3,7 @@
     $app_local_lang     = get_default_language_code();
 @endphp
 
-<section class="banner bg_img bg-overlay-base-2" data-background="{{ asset('public/frontend/images/element/bg1.png') }}">
+<section class="banner bg_img bg-overlay-base-2" data-background="{{ asset('/frontend/images/element/bg1.png') }}">
     <div class="container mx-auto">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12 my-auto">

@@ -18,7 +18,7 @@
         <div class="container mx-auto">
             <div class="row">
                 <div class="col-md-6 d-grid my-auto py-5 login-img">
-                    <img src="{{ asset("public/frontend/images/element/login-signup.png") }}" alt="Image" class="img-fluid">
+                    <img src="{{ asset("/frontend/images/element/login-signup.png") }}" alt="Image" class="img-fluid">
                 </div>
 
                 <div class="col-md-6 my-auto">

@@ -16,7 +16,7 @@ class BasicSettingsSeeder extends Seeder
     public function run()
     {
         $data = [
-            'site_name'         => "Crypinvest",
+            'site_name'         => "Coptic",
             'site_title'        => "Invest And Safe Your Money",
             'base_color'        => "#F26822",
             'secondary_color'   => "#262626",
@@ -43,7 +43,7 @@ class BasicSettingsSeeder extends Seeder
                 "username" => "",
                 "password" => "",
                 "from" => "", 
-                "app_name" => "Crypinvest",
+                "app_name" => "Coptic",
             ],
             'email_verification'    => true,
             'site_logo_dark'        => "seeder/dark-logo.webp",

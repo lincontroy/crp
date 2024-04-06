@@ -48,8 +48,8 @@
                                 <h3>{{ __("Download App") }}</h3>
                             </div>
                             <ul>
-                                <li><a href="{{ $__app_settings->android_url ?? "javascript:void(0)" }}" class="app-img"><img src="{{ asset('public/frontend/images/app/play_store.png') }}" alt="app"></a></li>
-                                <li><a href="{{ $__app_settings->iso_url ?? "javascript:void(0)" }}" class="app-img"><img src="{{ asset('public/frontend/images/app/app_store.png') }}" alt="app"></a></li>
+                                <li><a href="{{ $__app_settings->android_url ?? "javascript:void(0)" }}" class="app-img"><img src="{{ asset('/frontend/images/app/play_store.png') }}" alt="app"></a></li>
+                                <li><a href="{{ $__app_settings->iso_url ?? "javascript:void(0)" }}" class="app-img"><img src="{{ asset('/frontend/images/app/app_store.png') }}" alt="app"></a></li>
                             </ul>
                         </div>
                     </div>
